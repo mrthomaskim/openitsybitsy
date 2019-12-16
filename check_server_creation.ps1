@@ -8,7 +8,8 @@ Description:
 #>
 try {
 #    $computers = Get-ADComputer -Filter {(OperatingSystem -like "*windows*server*") -and (Enabled -eq "True")} `
-    $computers = Get-ADComputer -Filter {Enabled -eq "True"} `
+#    $computers = Get-ADComputer -Filter {Enabled -eq "True"} `
+    $computers = Get-ADComputer -Filter * `
                 -Properties DistinguishedName, Created, createTimeStamp, LastLogonDate, OperatingSystem, OperatingSystemVersion, DNSHostName, Enabled, PasswordLastSet| Sort Name
 }
 catch {
